@@ -1,0 +1,4 @@
+flask
+gunicorn
+flask-heroku
+python-dotenv
