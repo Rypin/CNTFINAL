@@ -1,7 +1,0 @@
-flask
-gunicorn
-flask-heroku
-python-dotenv
-requests
-authlib
-six
