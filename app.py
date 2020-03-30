@@ -46,7 +46,7 @@ def callback_handling():
 @app.route('/login', methods=['POST', 'GET'])
 def login():
     return auth0.authorize_redirect(redirect_uri='https://powerful-badlands-71674.herokuapp.com/callback')
-@app.route('/logout')
+@app.route('/logout', methods=['POST', 'GET'])
 def logout():
     # Clear session stored data
     session.clear()
