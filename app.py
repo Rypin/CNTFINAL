@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request,redirect, Response, j
 import cv2
 from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
-import time
+
 from functools import wraps
 import json
 from os import environ as env
@@ -76,10 +76,8 @@ def home():
 def gen_live(target):
     cam = cv2.VideoCapture(target)
     print('Attempting to open URL')
-    while not cam.isOpened():
-        print("Can't Find Cam")
-        cam = cv2.VideoCapture(target)
-        time.sleep(100)
+    if not cam.isOpened():
+        raise RuntimeError('Could Not Connect to Cam')
     while True:
         result,frame = cam.read()
         if not result:
