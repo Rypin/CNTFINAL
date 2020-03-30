@@ -43,7 +43,7 @@ def callback_handling():
     #    'picture': userinfo['picture']
    # }
     return redirect('/home')
-@app.route('/login')
+@app.route('/login', methods=['POST', 'GET'])
 def login():
     return auth0.authorize_redirect(redirect_uri='https://powerful-badlands-71674.herokuapp.com/callback')
 @app.route('/logout')
