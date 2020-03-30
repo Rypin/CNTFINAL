@@ -77,7 +77,7 @@ def gen_live(target):
     cam = cv2.VideoCapture(target)
     print('Attempting to open URL')
     while not cam.isOpened():
-        raise RuntimeError('Could Not Connect to Cam')
+        print("Can't Find Cam")
         cam = cv2.VideoCapture(target)
         sleep(100)
     while True:
