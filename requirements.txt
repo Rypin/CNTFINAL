@@ -2,3 +2,5 @@ flask
 gunicorn
 flask-heroku
 python-dotenv
+opencv-python
+opencv-contrib-python

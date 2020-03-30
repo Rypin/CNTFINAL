@@ -1,0 +1,19 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <title>CNTFinal</title>
+    {%  block head %}{% endblock %}
+</head>
+<body>
+    <center>
+        <div class ="container">
+            <h2><font face="Helvetica" color="black">{{ streamtype | safe}}</font></h2>
+        <img src = "{{url_for('video_feed')}}">
+    </div>
+    </center>
+</body>
+</html>
