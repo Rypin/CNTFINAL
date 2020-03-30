@@ -36,12 +36,12 @@ def callback_handling():
     userinfo = resp.json()
 
     # Store the user information in flask session.
-    session['jwt_payload'] = userinfo
-    session['profile'] = {
-        'user_id': userinfo['sub'],
-        'name': userinfo['name'],
-        'picture': userinfo['picture']
-    }
+    #session['jwt_payload'] = userinfo
+    #session['profile'] = {
+    #    'user_id': userinfo['sub'],
+    #    'name': userinfo['name'],
+    #    'picture': userinfo['picture']
+   # }
     return redirect('/home')
 @app.route('/login')
 def login():
