@@ -82,15 +82,17 @@ def gen_live(target):
         frame_enc = cv2.imencode('.jpeg', frame)[1].tobytes()
         yield (b'--frame\r\n'
                      b'Content-Type: image/jpeg\r\n\r\n' + frame_enc + b'\r\n')
-@app.route('/video_feed')
+@app.route('/video_feed',methods=['GET'])
 def video_feed():
     return Response(gen_live(target), mimetype='multipart/x-mixed-replace; boundary=frame')
 @app.route('/static', methods=['POST', 'GET'])
+@requires_auth
 def static_stream():
     global target
     target = staticUrl
     return render_template('base.html', streamtype = "Static Stream")
 @app.route('/livestream', methods=['POST', 'GET'])
+@requires_auth
 def live_stream():
     global target
     target = url
