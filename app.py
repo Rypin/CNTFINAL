@@ -28,7 +28,7 @@ auth0 = oauth.register(
 )
 
 
-@app.route('/callback')
+@app.route('/callback', methods = ['POST', 'GET'])
 def callback_handling():
     # Handles response from token endpoint
     auth0.authorize_access_token()
