@@ -1,7 +1,5 @@
 from flask import Flask, render_template, url_for, request,redirect, Response
-import numpy as np
 import cv2
-from IPython.display import clear_output
 url = "http://73.85.164.101:8081/video.mjpg"
 staticUrl = "https://dl.dropboxusercontent.com/s/a1qo1e2fsyuxnji/static-video.mp4?dl=0"
 target = ''
