@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request,redirect, Response, jsonify
+from flask import Flask, render_template, url_for, request,redirect, Response, jsonify,session
 import cv2
 from authlib.integrations.flask_client import OAuth
 from six.moves.urllib.parse import urlencode
@@ -96,4 +96,5 @@ def live_stream():
     target = url
     return render_template('base.html', streamtype ="Livestream")
 if __name__ == '__main__':
+    app.secret_key = 'TestKey'
     app.run()
