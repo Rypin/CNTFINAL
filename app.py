@@ -63,7 +63,9 @@ def requires_auth(f):
 
   return decorated
 
-
+@app.route('/', methods=['POST', 'GET'])
+def welcome():
+    return render_template('welcome.html')
 @app.route('/home', methods=['POST', 'GET'])
 @requires_auth
 def home():
