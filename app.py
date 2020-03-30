@@ -85,12 +85,12 @@ def gen_live(target):
 @app.route('/video_feed')
 def video_feed():
     return Response(gen_live(target), mimetype='multipart/x-mixed-replace; boundary=frame')
-@app.route('/static', methods=['POST'])
+@app.route('/static', methods=['POST', 'GET'])
 def static_stream():
     global target
     target = staticUrl
     return render_template('base.html', streamtype = "Static Stream")
-@app.route('/livestream', methods=['POST'])
+@app.route('/livestream', methods=['POST', 'GET'])
 def live_stream():
     global target
     target = url
