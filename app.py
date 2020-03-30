@@ -86,7 +86,6 @@ def gen_live(target):
         yield (b'--frame\r\n'
                      b'Content-Type: image/jpeg\r\n\r\n' + frame_enc + b'\r\n')
 @app.route('/video_feed',methods=['GET'])
-@requires_auth
 def video_feed():
     return Response(gen_live(target), mimetype='multipart/x-mixed-replace; boundary=frame')
 @app.route('/static', methods=['POST', 'GET'])
