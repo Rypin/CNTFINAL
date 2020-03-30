@@ -4,3 +4,4 @@ flask-heroku
 python-dotenv
 opencv-python-headless
 opencv-contrib-python-headless
+ffmpeg
