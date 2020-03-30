@@ -49,6 +49,7 @@ textarea {
 
 }
 .btn {
+    max-width: 525px;
 	display: block;
 	width: 100%;
 	background: #333;
