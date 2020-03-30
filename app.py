@@ -51,7 +51,7 @@ def logout():
     # Clear session stored data
     session.clear()
     # Redirect user to logout endpoint
-    params = {'returnTo': url_for('home', _external=True), 'client_id': 'XBSoL35oZ0ZJyMxbDXLZxUIcPReufQox'}
+    params = {'returnTo': url_for('', _external=True), 'client_id': 'XBSoL35oZ0ZJyMxbDXLZxUIcPReufQox'}
     return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
 def requires_auth(f):
   @wraps(f)
