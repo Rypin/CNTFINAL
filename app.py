@@ -12,7 +12,7 @@ url = "http://73.85.164.101:8081/video.mjpg"
 staticUrl = "https://dl.dropboxusercontent.com/s/a1qo1e2fsyuxnji/static-video.mp4?dl=0"
 target = ''
 app = Flask(__name__)
-
+app.secret_key = 'TestKey'
 oauth = OAuth(app)
 
 auth0 = oauth.register(
@@ -42,7 +42,7 @@ def callback_handling():
         'name': userinfo['name'],
         'picture': userinfo['picture']
     }
-    return redirect('/dashboard')
+    return redirect('/home')
 @app.route('/login')
 def login():
     return auth0.authorize_redirect(redirect_uri='https://powerful-badlands-71674.herokuapp.com/home')
