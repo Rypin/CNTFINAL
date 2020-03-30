@@ -51,8 +51,11 @@ def logout():
     # Clear session stored data
     session.clear()
     # Redirect user to logout endpoint
-    params = {'returnTo': url_for('', _external=True), 'client_id': 'XBSoL35oZ0ZJyMxbDXLZxUIcPReufQox'}
-    return redirect(auth0.api_base_url + '/v2/logout?' + urlencode(params))
+    if 'profile' not in session:
+        return redirect('/')
+    else:
+        session.clear()
+        return redirect('/')
 def requires_auth(f):
   @wraps(f)
   def decorated(*args, **kwargs):
