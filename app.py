@@ -45,7 +45,7 @@ def callback_handling():
     return redirect('/home')
 @app.route('/login')
 def login():
-    return auth0.authorize_redirect(redirect_uri='https://powerful-badlands-71674.herokuapp.com/home')
+    return auth0.authorize_redirect(redirect_uri='https://powerful-badlands-71674.herokuapp.com/callback')
 @app.route('/logout')
 def logout():
     # Clear session stored data
