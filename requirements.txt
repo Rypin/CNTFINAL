@@ -5,3 +5,7 @@ python-dotenv
 opencv-python-headless
 opencv-contrib-python-headless
 ffmpeg
+requests
+authlib
+six
+flask-session
