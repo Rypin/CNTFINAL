@@ -10,11 +10,15 @@
 <body>
     <center>
         <div class ="container">
-            <h2><font face="Helvetica" color="black">{{ streamtype | safe}}</font></h2>
-        <img src = "{{url_for('video_feed')}}">
+            <h2><font face="Helvetica" color="black">Static Stream</font></h2>
+            <video width="640" height="480" controls>
+                <source src="https://dl.dropboxusercontent.com/s/a1qo1e2fsyuxnji/static-video.mp4?dl=0" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
     </div>
     </center>
     <div class="logged-in-box auth0-box logged-in">
+        <a class="btn" href="/home">Back</a><br />
         <a class="btn btn-primary btn-lg btn-logout btn-block" href="/logout">Logout</a>
     </div>
 </body>

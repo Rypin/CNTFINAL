@@ -91,9 +91,7 @@ def video_feed():
 @app.route('/static', methods=['POST', 'GET'])
 @requires_auth
 def static_stream():
-    global target
-    target = staticUrl
-    return render_template('base.html', streamtype = "Static Stream")
+    return render_template('static.html', streamtype = "Static Stream")
 @app.route('/livestream', methods=['POST', 'GET'])
 @requires_auth
 def live_stream():
